@@ -1,21 +1,11 @@
 # Arduino-realtime-temperature-datalogger
 Arduino temperature datalogger with LCD display and set temperature LED indicator using pyfirmata
 
-Pyfirmata file needs modifying by including the liquid crystal function below to operate the LCD:
+The standard pyfirmata file needs modifying to include the liquid crystal function.
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int lastLine = 1;
+First upload the pyfirmataLCD.ino file to the Arduino using the arduino IDE
 
-void stringDataCallback(char *stringData){
-   if ( lastLine ) {
-     lastLine = 0;
-     lcd.clear();
-   } else {
-     lastLine = 1;
-     lcd.setCursor(0,1);
-   }
-   lcd.print(stringData);
-}
+Connect the Arduino as follows:
 
 LCD pin assignment:
 16(LED-) to -ve
@@ -38,3 +28,5 @@ LCD pin assignment:
 On the Arduino:
 Analogue pin A0 to center pin of TMP36 temperature sensor (from flat side facing the left pin to +ve, right pin to -ve)
 Digital pin 8, 9 and 10 each connect to the long side of an LED, then the cathode (short pin) of the LED connects via a 220ohm resistor to ground
+
+Connect the Arduino to a laptop via USB and use the Python temperature_live_datalogger.py code to run. Ensure you enter the desired path within the code to save the data 
