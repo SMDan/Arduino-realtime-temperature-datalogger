@@ -1,6 +1,6 @@
 # Arduino-realtime-temperature-datalogger-with-python
 
-Arduino temperature datalogger with LCD display and set temperature LED indicator and live graphical output using Arduino and python.
+Arduino Uno temperature datalogger with LCD display and set temperature LED indicator and live graphical output using Arduino and python.
 
 The standard pyfirmata file that translates the python code to the Arduino needs modifying in order to utilise the liquid crystal display.
 
